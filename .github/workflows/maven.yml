@@ -3,19 +3,15 @@ name: Selenium CI
 on:
   push:
     branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v3
 
-    - name: Set up Java
+    - name: Setup Java
       uses: actions/setup-java@v3
       with:
         java-version: '8'
@@ -23,3 +19,4 @@ jobs:
 
     - name: Build and Run Tests
       run: mvn clean test
+      working-directory: opencart   # 👈 IMPORTANT
