@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+
+    <groups>
+        <run>
+            <include name="sanity"/>
+            <include name="Regression"/>
+        </run>
+    </groups>
+
+    <test name="MasterTest">
+        <parameter name="os" value="Windows"/>
+        <parameter name="browser" value="Chrome"/>
+
+        <classes>
+            <class name="tastCases.TC001_AccountRegistrationTest"/>
+            <class name="tastCases.TC002_LoginTest"/>
+        </classes>
+    </test>
+
+</suite>
+	
